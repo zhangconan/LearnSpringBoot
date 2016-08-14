@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Created by zkn on 2016/8/11.
  */
 @Repository
-public class PersonDAOImpl implements PersonDAO{
+public class PersonDAOImpl implements PersonDAO {
 
     @Autowired
     private PersonDomain personDomain;

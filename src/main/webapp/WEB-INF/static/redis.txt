@@ -1,0 +1,29 @@
+#redis配置#
+#redis集群
+redis.servers = 127.0.0.1:6379
+#超时时间
+redis.timeout = 5
+#是否启用后进先出
+redis.conf.lifo = ${redis.conf.lifo}
+#最多创建几个ShardJedis，即连接
+redis.conf.maxTotal = ${redis.conf.maxTotal}
+#连接耗尽是否阻塞等待
+redis.conf.blockWhenExhausted = ${redis.conf.blockWhenExhausted}
+#等待获取连接的最长时间
+redis.conf.maxWaitMillis = ${redis.conf.maxWaitMillis}
+#获取连接前，是否对连接进行测试
+redis.conf.testOnBorrow = ${redis.conf.testOnBorrow}
+#归还连接前，是否对连接进行测试
+redis.conf.testOnReturn = ${redis.conf.testOnReturn}
+#最大空闲连接数
+redis.conf.maxIdle = ${redis.conf.maxIdle}
+#最小空闲连接数
+redis.conf.minIdle = ${redis.conf.minIdle}
+#对空闲连接进行扫描，检查连接有效性
+redis.conf.testWhileIdle = ${redis.conf.testWhileIdle}
+#两次扫描空闲连接的时间间隔
+redis.conf.timeBetweenEvictionRunsMillis = ${redis.conf.timeBetweenEvictionRunsMillis}
+#每次空闲扫描时扫描的控线连接的个数
+redis.conf.numTestsPerEvictionRun = ${redis.conf.numTestsPerEvictionRun}
+#一个空闲连接至少连续保持多长时间空闲才会被空闲扫描
+redis.conf.minEvictableIdleTimeMillis = ${redis.conf.minEvictableIdleTimeMillis}

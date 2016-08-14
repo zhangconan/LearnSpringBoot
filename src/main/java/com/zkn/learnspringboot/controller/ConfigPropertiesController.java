@@ -18,13 +18,13 @@ public class ConfigPropertiesController {
     private PersonService personService;
 
     @RequestMapping("/configProperties.do")
-    public PersonDomain home(){
+    public PersonDomain home() {
 
         return personService.getPersonDomain();
     }
 
     @RequestMapping("/configPropertiesString.do")
-    public String home1(){
+    public String home1() {
 
         return "读取配置问";
     }

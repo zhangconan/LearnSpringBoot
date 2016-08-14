@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
- /**
+/**
  * Created by zkn on 2016/8/11.
  */
 @ConfigurationProperties(prefix = "person")

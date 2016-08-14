@@ -2,13 +2,15 @@ package com.zkn.learnspringboot.runner;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by zkn on 2016/8/12.
- * 注意：一定要有@Component这个注解。要不然SpringBoot扫描不到这个类。
+ * 注意：一定要有@Component这个注解。要不然SpringBoot扫描不到这个类,是不会执行。
  */
 @Component
+@Order(value = 1)
 public class TestImplApplicationRunner implements ApplicationRunner {
 
 
