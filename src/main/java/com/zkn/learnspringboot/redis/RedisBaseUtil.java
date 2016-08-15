@@ -1,31 +1,32 @@
 package com.zkn.learnspringboot.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import redis.clients.jedis.ShardedJedis;
-import redis.clients.jedis.ShardedJedisPool;
+import org.springframework.stereotype.Component;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 /**
  * Created by zkn on 2016/8/14.
  */
+@Component
 public class RedisBaseUtil {
 
     @Autowired
-    private ShardedJedisPool shardedJedisPool;
+    private JedisPool jedisPool;
 
-    public static ShardedJedis getShardedJedis(){
+    public Jedis getJedis(){
 
-        ShardedJedis shardedJedis = shardedJedisPool.getResource();
-        if(shardedJedis == null)
+        Jedis jedis = jedisPool.getResource();
+        if(jedis == null)
             return null;
-        return shardedJedis;
+        return jedis;
     }
 
-    public static void releaseShardedJedis(ShardedJedis shardedJedis){
+    public void releaseJedis(Jedis jedis){
 
-        if(shardedJedis = null)
+        if(jedis == null)
             return;
-        if(shardedJedisPool.getResource() == null)
-            return;
-        shardedJedisPool.getResource().close();
+        jedis.close();
     }
+
 }
