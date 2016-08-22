@@ -1,15 +1,16 @@
 package com.zkn.learnspringboot.domain;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
 
 /**
  * Created by zkn on 2016/8/11.
  */
 @ConfigurationProperties(prefix = "person")
 @Component
-public class PersonDomain {
+public class PersonDomain implements Serializable{
 
     /**
      * id
