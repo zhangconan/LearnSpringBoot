@@ -2,6 +2,8 @@ package com.zkn.learnspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableAutoConfiguration
 @ComponentScan
-public class FirstExample {
+public class FirstExample implements EmbeddedServletContainerCustomizer {
 
     @RequestMapping("/first.do")
     String home() {
@@ -35,5 +37,11 @@ public class FirstExample {
     public static void main(String[] args) {
 
         SpringApplication.run(FirstExample.class, args);
+    }
+
+    @Override
+    public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
+
+        configurableEmbeddedServletContainer.setPort(8001);
     }
 }
