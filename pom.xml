@@ -75,6 +75,16 @@
             <artifactId>zkclient</artifactId>
             <version>0.9</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.0.RC2</version>
+            <scope>test</scope>
+        </dependency>
         <!-- dubbo的jar包 end -->
     </dependencies>
     <dependencyManagement>
