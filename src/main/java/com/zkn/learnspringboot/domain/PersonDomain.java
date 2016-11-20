@@ -48,4 +48,12 @@ public class PersonDomain implements Serializable{
     public void setPassWord(String passWord) {
         this.passWord = passWord;
     }
+    @Override
+    public String toString() {
+        return "PersonDomain{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                '}';
+    }
 }

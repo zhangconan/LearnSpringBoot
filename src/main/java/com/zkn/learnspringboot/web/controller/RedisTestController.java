@@ -1,4 +1,4 @@
-package com.zkn.learnspringboot.controller;
+package com.zkn.learnspringboot.web.controller;
 
 import com.zkn.learnspringboot.redis.RedisStringUtil;
 import org.springframework.beans.factory.annotation.Autowired;

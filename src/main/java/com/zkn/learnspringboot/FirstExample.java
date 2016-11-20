@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @EnableAutoConfiguration
-@ImportResource(locations = {"classpath:dubbo-provider.xml"})
+//@ImportResource(locations = {"classpath:dubbo-provider.xml"})
 @ComponentScan
 public class FirstExample implements EmbeddedServletContainerCustomizer {
 

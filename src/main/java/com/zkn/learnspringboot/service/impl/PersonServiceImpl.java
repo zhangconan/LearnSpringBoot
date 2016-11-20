@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Created by zkn on 2016/8/11.
  */
-//@Service("personService")
+@org.springframework.stereotype.Service("personService")
 //Service一定要用dubbo的Service
-@Service
+//@Service
 public class PersonServiceImpl implements PersonService {
 
     @Autowired

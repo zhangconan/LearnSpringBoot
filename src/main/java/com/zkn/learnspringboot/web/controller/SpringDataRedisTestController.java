@@ -1,4 +1,4 @@
-package com.zkn.learnspringboot.controller;
+package com.zkn.learnspringboot.web.controller;
 
 import com.zkn.learnspringboot.domain.PersonDomain;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
