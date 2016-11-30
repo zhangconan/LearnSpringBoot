@@ -44,6 +44,6 @@ public class FirstExample implements EmbeddedServletContainerCustomizer {
     @Override
     public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
 
-        configurableEmbeddedServletContainer.setPort(8001);
+        configurableEmbeddedServletContainer.setPort(8003);
     }
 }
