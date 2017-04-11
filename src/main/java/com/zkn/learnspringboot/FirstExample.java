@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Created by zkn on 2016/8/7.
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 //@ImportResource(locations = {"classpath:dubbo-provider.xml"})
 @ComponentScan
+@EnableSwagger2
 public class FirstExample implements EmbeddedServletContainerCustomizer {
 
     @RequestMapping("/first.do")
@@ -37,7 +39,7 @@ public class FirstExample implements EmbeddedServletContainerCustomizer {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(System.getProperty("user.dir"));
         SpringApplication.run(FirstExample.class, args);
     }
 
