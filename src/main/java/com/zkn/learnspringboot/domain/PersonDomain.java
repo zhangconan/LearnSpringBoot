@@ -1,5 +1,7 @@
 package com.zkn.learnspringboot.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,19 +12,23 @@ import java.io.Serializable;
  */
 @ConfigurationProperties(prefix = "person")
 @Component
+@ApiModel(value = "PersonDomain",description = "人员信息的处理类")
 public class PersonDomain implements Serializable{
 
     /**
      * id
      */
+    @ApiModelProperty(name = "id",value = "主键ID",required = true,dataType = "Integer")
     private Integer id;
     /**
      * 用户名
      */
+    @ApiModelProperty(name = "userName",value = "用户姓名",allowableValues = "zhangsan,lisi,wang",dataType = "String")
     private String userName;
     /**
-     * m密码
+     * 密码
      */
+    @ApiModelProperty(name = "passWord",value = "密码",dataType = "String")
     private String passWord;
 
     public Integer getId() {

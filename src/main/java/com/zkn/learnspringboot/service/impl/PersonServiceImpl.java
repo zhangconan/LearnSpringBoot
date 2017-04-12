@@ -17,6 +17,7 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     private PersonDAO personDAO;
 
+    @Override
     public PersonDomain getPersonDomain() {
 
         return personDAO.getPersonDomain();

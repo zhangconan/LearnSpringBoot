@@ -14,6 +14,7 @@ public class PersonDAOImpl implements PersonDAO {
     @Autowired
     private PersonDomain personDomain;
 
+    @Override
     public PersonDomain getPersonDomain() {
 
         return personDomain;
