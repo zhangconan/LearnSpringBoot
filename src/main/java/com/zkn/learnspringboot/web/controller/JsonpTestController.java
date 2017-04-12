@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * Created by wb-zhangkenan on 2016/12/1.
  */
+@ApiIgnore
 @RestController
 @RequestMapping("/jsonp")
 public class JsonpTestController {

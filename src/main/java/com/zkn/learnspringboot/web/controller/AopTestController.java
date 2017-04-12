@@ -2,10 +2,13 @@ package com.zkn.learnspringboot.web.controller;
 
         import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.RestController;
+        import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * Created by zkn on 2016/11/19.
  */
+//忽略不需要生成api的类
+@ApiIgnore
 @RestController
 @RequestMapping("/aop")
 public class AopTestController {

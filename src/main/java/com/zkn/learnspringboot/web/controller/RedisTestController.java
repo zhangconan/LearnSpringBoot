@@ -6,10 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * Created by zkn on 2016/8/15.
  */
+@ApiIgnore
 @Controller
 @ResponseBody
 public class RedisTestController {
