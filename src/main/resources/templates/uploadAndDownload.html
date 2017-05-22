@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form id="upload" enctype="multipart/form-data" method="post" action="/uploadAndDownload/uploadFileAction">
+    <input type="file" name="uploadFile"/>
+    <input type="hidden" name="id" value="12"/>
+    <input type="button" name="上传文件" value="上传" onclick="doUpload()"/>
+</form>
+<script type="text/javascript">
+    function doUpload() {
+        var upl = document.getElementById("upload");
+        upl.submit();
+    }
+</script>
+</body>
+</html>
