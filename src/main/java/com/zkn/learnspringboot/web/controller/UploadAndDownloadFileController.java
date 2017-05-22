@@ -1,14 +1,18 @@
 package com.zkn.learnspringboot.web.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by wb-zhangkenan on 2017/5/22.
@@ -42,4 +46,31 @@ public class UploadAndDownloadFileController {
         return modelAndView;
     }
 
+    @RequestMapping("downloadFileAction")
+    @ResponseBody
+    public void downloadFileAction(HttpServletRequest request, HttpServletResponse response) {
+
+        response.setCharacterEncoding(request.getCharacterEncoding());
+        response.setContentType("application/octet-stream");
+        FileInputStream fis = null;
+        try {
+            File file = new File("G:\\config.ini");
+            fis = new FileInputStream(file);
+            response.setHeader("Content-Disposition", "attachment; filename="+file.getName());
+            IOUtils.copy(fis,response.getOutputStream());
+            response.flushBuffer();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
