@@ -18,10 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by wb-zhangkenan on 2017/5/22.
- *
- * @author wb-zhangkenan
- * @date 2017/05/22
+ * Created by zkn
  */
 @Component("fileUploadInterceptor")
 @ConfigurationProperties(prefix = "fileupload")

@@ -34,20 +34,37 @@ public class UploadAndDownloadFileController {
     public ModelAndView uploadFileAction(@RequestParam("uploadFile") MultipartFile uploadFile, @RequestParam("id") Long id) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("uploadAndDownload");
+        InputStream fis = null;
+        OutputStream outputStream = null;
         try {
-            InputStream fis = uploadFile.getInputStream();
-            System.out.println(fis.toString() + " " + id);
+            fis = uploadFile.getInputStream();
+            outputStream = new FileOutputStream("G:\\uploadfile\\"+uploadFile.getOriginalFilename());
+            IOUtils.copy(fis,outputStream);
             modelAndView.addObject("sucess", "上传成功");
             return modelAndView;
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            if(fis != null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(outputStream != null){
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         modelAndView.addObject("sucess", "上传失败!");
         return modelAndView;
     }
 
     @RequestMapping("downloadFileAction")
-    @ResponseBody
     public void downloadFileAction(HttpServletRequest request, HttpServletResponse response) {
 
         response.setCharacterEncoding(request.getCharacterEncoding());

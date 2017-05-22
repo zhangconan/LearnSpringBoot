@@ -6,6 +6,7 @@
     <script th:src="@{/js/jquery-2.1.4.min.js}"></script>
 </head>
 <body>
+@{sucess}
 <form id="upload" enctype="multipart/form-data" method="post" action="/uploadAndDownload/uploadFileAction">
     <input type="file" name="uploadFile"/>
     <input type="hidden" name="id" value="12"/>
@@ -23,17 +24,6 @@
         var upl = document.getElementById("download");
         upl.submit();
     }
-    /*
-    function doDownload() {
-        $.ajax({
-            type:"POST",
-            url:"",
-            success:function () {
-                alert("请求成功!");
-            }
-        });
-    }
-    */
 </script>
 </body>
 </html>
