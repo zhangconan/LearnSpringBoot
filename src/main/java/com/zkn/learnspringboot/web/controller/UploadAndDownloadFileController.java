@@ -25,20 +25,20 @@ import javax.servlet.http.HttpServletResponse;
 public class UploadAndDownloadFileController {
 
     @RequestMapping("/index")
-    public String index() {
+    public String index(HttpServletRequest request) {
 
         return "uploadAndDownload";
     }
 
     @RequestMapping(value = "/uploadFileAction", method = RequestMethod.POST)
-    public ModelAndView uploadFileAction(@RequestParam("uploadFile") MultipartFile uploadFile, @RequestParam("id") Long id) {
+    public ModelAndView uploadFileAction(@RequestParam("uploadFile") MultipartFile uploadFile, @RequestParam("id") Long id,HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("uploadAndDownload");
         InputStream fis = null;
         OutputStream outputStream = null;
         try {
             fis = uploadFile.getInputStream();
-            outputStream = new FileOutputStream("G:\\uploadfile\\"+uploadFile.getOriginalFilename());
+            outputStream = new FileOutputStream(request.getServletContext().getRealPath("")+File.separator+uploadFile.getOriginalFilename());
             IOUtils.copy(fis,outputStream);
             modelAndView.addObject("sucess", "上传成功");
             return modelAndView;
